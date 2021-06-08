@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>AI화재감지 시스템</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{url_for('static', filename='assets/img/favicon.png')}}" rel="icon">
+  <link href="{{url_for('static', filename='assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+
+  <!-- jquery -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between"   >
+
+      <div class="section-title">
+        <h1><a href="index.html">AI화재감지 시스템</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><button type="button" class="btn btn-primary" onclick="getCamera()">화재감지</button></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+
+  <main id="main">
+
+    <!-- ======= App Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+
+          <h2></h2>
+          <p># AI학습된 모델과  Iot 장비로 화재를 감지하는 시스템  : </p>
+
+        <!-- https://icons.getbootstrap.com/ -->
+        <div class="row no-gutters">
+          <div class="col-xl-7 d-flex align-items-stretch order-1 order-md-1"  color  = "#47536e">
+            <div class="content d-flex flex-column justify-content-center">
+              <div class="row">
+
+                <div class="row">
+                    <!-- 카메라 -->
+                    <div class="col-xl-7 icon-box" data-aos="fade-up">
+                      <i class="bx bi-camera-video-fill"></i>
+                      <h4>CAMERA 1</h4>
+                      <p id ="p_camera_1"></p>
+                      <!-- 카메라 영상 -->
+                      <img id="camera1" src="{{ url_for('video_feed') }}" width="350" >
+                    </div>
+
+                <!-- <div class="col-md-4 icon-box" data-aos="fade-up" data-aos-delay="100">
+                  <i class=""></i>
+                  <h4></h4>
+                  <p id="snapShot"></p>
+                  <p id ="camera1_status"></p>
+                  <p id ="camera1_info"></p>
+                </div> -->
+                <!-- <div class="col-md-4 icon-box" data-aos="fade-up" data-aos-delay="200">
+                  <i class=""></i>
+                  <h4></h4>
+                  <p></p>
+                </div> -->
+                </div>
+                <div class="row">
+
+                    <!-- IoT 센서  -->
+                    <div class="col-md-4 icon-box" data-aos="fade-up" data-aos-delay="300">
+                      <i class="bx bi-cpu"></i>
+                      <h4>IoT </h4>
+                      <p id ="p_sensor_1"></p>
+                    </div>
+                    <div class="col-md-4 icon-box" data-aos="fade-up" data-aos-delay="400">
+                      <i class="bx bi-cpu-fill"></i>
+                      <h4>IoT </h4>
+                      <p id ="p_sensor_2"></p>
+                    </div>
+                    <!-- <div class="col-md-4 icon-box" data-aos="fade-up" data-aos-delay="500">
+                      <i class=""></i>
+                      <h4></h4>
+                      <p id ="p_sensor_3"></p>
+                    </div> -->
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- <div class="image col-sm-3 d-flex align-items-stretch justify-content-center order-1 order-sm-1" data-aos="fade-left" data-aos-delay="100">
+            <img src="{{url_for('static', filename='assets/img/details-2.png')}}" class="img-fluid" alt="">
+          </div> -->
+
+          <div class="col-sm-4 order-1 order-sm-2" data-aos="fade-left">
+            <img src="{{url_for('static', filename='assets/img/details-2.png')}}"class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End App Features Section -->
+
+  </main><!-- End #main -->
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container py-1">
+      <div class="copyright">
+        &copy; Copyright <strong><span>7조</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">7조</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+
+
+
+
+<!------ - 팝업창   -------->
+<!-- Modal -->
+<div class="modal fade" id="proModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">[화재알림]</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        화재발생 !!!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+
+    // 버튼 클릭 이벤트
+    $('#execute').click(function(){
+         getData();
+    })
+
+    // 화재 발생시 처리
+    function alarmFire() {
+        //화재발생 pop up
+        show_proModal();
+
+    }
+
+    // 팝업창
+    function show_proModal(){
+        $("#proModal").modal("show");
+    }
+
+ // 윈도우 실행시 화재 감지
+ //$( window ).on( "load", setCamera );
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
